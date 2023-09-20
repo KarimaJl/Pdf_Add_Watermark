@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pdf Confidential</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Welcome!</h1>
+      <p>Select the PDF file you want to upload:</p>
+      <form action="http://localhost:5000/secure" method="POST" enctype="multipart/form-data">
+        <input type="file" name="pdf_file" id="pdf_file" class="input-file" onchange="updateLabel()">
+        <label for="pdf_file" class="file-label" id="file-label">Choose a file</label>
+        <button type="submit" class="submit-button">Upload PDF</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function updateLabel() {
+      const input = document.getElementById('pdf_file');
+      const label = document.getElementById('file-label');
+      if (input.files.length > 0) {
+        label.innerText = input.files[0].name;
+      } else {
+        label.innerText = 'Choose a file';
+      }
+    }
+  </script>
+</body>
+</html>

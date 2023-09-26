@@ -8,7 +8,7 @@ This will create a new PDF document called secure.pdf with the watermark "CONFID
 
   <h3> Installation </h3>
   <ul> 
-    <li > pip install reportlab   </li>
+    <li > pip install reportlab  </li>
   </ul>
 
 
